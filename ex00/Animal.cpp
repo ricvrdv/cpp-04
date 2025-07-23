@@ -43,7 +43,7 @@ Animal::~Animal( void )
 // Member function
 void    Animal::makeSound( void ) const
 {
-    std::cout << "* NO  SOUND *" << std::endl;
+    std::cout << this->type << ": * NO  SOUND *" << std::endl;
 }
 
 // Getter

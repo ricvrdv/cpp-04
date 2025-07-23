@@ -43,7 +43,7 @@ WrongAnimal::~WrongAnimal( void )
 // Member function
 void    WrongAnimal::makeSound( void ) const
 {
-    std::cout << "* NO  SOUND *" << std::endl;
+    std::cout << this->type << ": * NO  SOUND *" << std::endl;
 }
 
 // Getter

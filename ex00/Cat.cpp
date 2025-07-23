@@ -43,5 +43,5 @@ Cat::~Cat( void )
 // Member function
 void    Cat::makeSound( void ) const
 {
-    std::cout << "* MEOW MEOW *" << std::endl; 
+    std::cout << this->type << ": * MEOW MEOW *" << std::endl; 
 }

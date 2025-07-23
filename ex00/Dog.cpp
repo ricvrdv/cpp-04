@@ -43,5 +43,5 @@ Dog::~Dog( void )
 // Member function
 void    Dog::makeSound( void ) const
 {
-    std::cout << "* WOOF WOOF *" << std::endl;
+    std::cout << this->type << ": * WOOF WOOF *" << std::endl;
 }
