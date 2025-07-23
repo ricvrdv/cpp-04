@@ -6,7 +6,7 @@
 #    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 13:51:43 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/22 19:07:13 by rjesus-d         ###   ########.fr        #
+#    Updated: 2025/07/23 15:35:24 by rjesus-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ RM = rm -rf
 # SOURCE FILES                                                                 #
 #==============================================================================#
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

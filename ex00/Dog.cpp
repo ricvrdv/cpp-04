@@ -12,3 +12,36 @@
 
 #include "Dog.hpp"
 
+// Default constructor
+Dog::Dog( void ) : Animal()
+{
+    std::cout << "Dog default constructor called." << std::endl;
+    this->type = "Dog";
+}
+
+// Copy constructor
+Dog::Dog( Dog const &other ) : Animal(other)
+{
+    std::cout << "Dog copy constructor called." << std::endl;
+}
+
+// Copy assignment operator
+Dog&    Dog::operator=( Dog const &other )
+{
+    if (this != &other)
+        Animal::operator=(other);
+    std::cout << "Dog copy assignment operator called." << std::endl;
+    return (*this);
+}
+
+// Destructor
+Dog::~Dog( void )
+{
+    std::cout << "Dog destructor called." << std::endl;
+}
+
+// Member function
+void    Dog::makeSound( void ) const
+{
+    std::cout << "* WOOF WOOF *" << std::endl;
+}
