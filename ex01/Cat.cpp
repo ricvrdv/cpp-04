@@ -6,21 +6,21 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:13:22 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/24 14:44:36 by applecore        ###   ########.fr       */
+/*   Updated: 2025/07/24 22:06:44 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 // Default constructor
-Cat::Cat( void ) : Animal(), pBrain(new Brain())
+Cat::Cat( void ) : Animal(), _pBrain(new Brain())
 {
     std::cout << "Cat default constructor called" << std::endl;
     this->type = "Cat";
 }
 
 // Copy constructor
-Cat::Cat( Cat const &other ) : Animal(other), pBrain(new Brain(*other.pBrain))
+Cat::Cat( Cat const &other ) : Animal(other), _pBrain(new Brain(*other._pBrain))
 {
     std::cout << "Cat copy constructor called" << std::endl;
 }
@@ -31,9 +31,9 @@ Cat&    Cat::operator=( Cat const &other )
     if (this != &other)
     {
         Animal::operator=(other);
-        if (this->pBrain)
-            delete this->pBrain;
-        this->pBrain = new Brain(*other.pBrain);
+        if (this->_pBrain)
+            delete this->_pBrain;
+        this->_pBrain = new Brain(*other._pBrain);
     }
     std::cout << "Cat copy assignment operator called" << std::endl;
     return (*this);
@@ -43,7 +43,7 @@ Cat&    Cat::operator=( Cat const &other )
 Cat::~Cat( void )
 {
     std::cout << "Cat destructor called" << std::endl;
-    delete this->pBrain;
+    delete this->_pBrain;
 }
 
 // Member function
@@ -55,10 +55,10 @@ void    Cat::makeSound( void ) const
 // Getters and setters
 std::string Cat::getIdea( int index ) const
 {
-    return (this->pBrain->getIdea(index));
+    return (this->_pBrain->getIdea(index));
 }
 
 void    Cat::setIdea( int index, std::string const &idea)
 {
-    this->pBrain->setIdea(index, idea);
+    this->_pBrain->setIdea(index, idea);
 }

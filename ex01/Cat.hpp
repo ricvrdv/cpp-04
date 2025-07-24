@@ -6,7 +6,7 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:12:24 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/24 14:40:33 by applecore        ###   ########.fr       */
+/*   Updated: 2025/07/24 22:01:48 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Cat : public Animal
 {
 	private:
 
-		Brain*	pBrain;
+		Brain*	_pBrain;
 
 	public:
 
