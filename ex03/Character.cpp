@@ -60,6 +60,7 @@ Character&  Character::operator=( Character const &other )
                 this->_inventory[i] = NULL;
         }
     }
+    return (*this);
 }
 
 // Destructor

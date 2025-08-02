@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 15:34:37 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/08/02 15:34:38 by rjesus-d         ###   ########.fr       */
+/*   Created: 2025/08/02 18:06:28 by rjesus-d          #+#    #+#             */
+/*   Updated: 2025/08/02 18:06:31 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "Character.hpp"
-#include "MateriaSource.hpp"
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-int	main()
+# include <string>
+
+class AMateria;
+
+class	IMateriaSource
 {
-    IMateriaSource*	src = new MateriaSource();
-	src->learnMateria( new Ice() );
-	src->learnMateria( new Cure() );
+	public:
 
-}
+		virtual ~IMateriaSource() {};
+		virtual void	learnMateria( AMateria* ) = 0;
+		virtual AMateria*	createMateria( std::string const &type ) = 0;
+};
+
+#endif
