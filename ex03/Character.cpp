@@ -82,5 +82,34 @@ std::string const	&Character::getName() const
 // Member functions
 void	Character::equip( AMateria *m )
 {
-	
+	if (!m)
+		return ;
+	for (int i = 0; i < SLOTS; i++)
+	{
+		if (!this->_inventory[i])
+		{
+			this->_inventory[i] = m;
+			std::cout << this->_name << " equiped with " << m->getType() << " in slot " << i << std::endl; 
+			break ;
+		}
+	}
+	std::cout << this->_name << " has no available slots" << std::endl;
 }
+
+void	Character::unequip( int idx )
+{
+	if (idx >= 0 && idx < SLOTS)
+	{
+		std::cout << this->_name << " unequiped " << _inventory[idx]->getType() << " from slot " << idx << std::endl;
+		this->_inventory[idx] = NULL;
+	}
+}
+
+void	Character::use( int idx, ICharacter &target )
+{
+	if (idx >= 0 && idx < SLOTS && _inventory[idx])
+		this->_inventory[idx]->use(target);
+	else
+		std::cout << "No Materia available in slot " << idx << std::endl;
+}
+
