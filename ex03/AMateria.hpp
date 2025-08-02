@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/02 15:33:39 by rjesus-d          #+#    #+#             */
+/*   Updated: 2025/08/02 15:33:42 by rjesus-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
@@ -5,11 +17,13 @@
 # include <string>
 # include "ICharacter.hpp"
 
+class   ICharacter;
+
 class   AMateria
 {
     protected:
 
-        std::string type;
+        std::string const	_type;
 
     public:
 
