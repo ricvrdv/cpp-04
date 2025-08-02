@@ -15,19 +15,19 @@
 // Default constructor
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice default constructor was called" << std::endl;
+	//std::cout << "Ice default constructor was called" << std::endl;
 }
 
 // Copy constructor
 Ice::Ice( Ice const &other ) : AMateria(other)
 {
-	std::cout << "Ice copy constructor was called" << std::endl;
+	//std::cout << "Ice copy constructor was called" << std::endl;
 }
 
 // Copy assignment operator
 Ice&	Ice::operator=( Ice const &other )
 {
-	std::cout << "Ice copy assignment operator was called" << std::endl;
+	//std::cout << "Ice copy assignment operator was called" << std::endl;
 	if (this != &other)
 		AMateria::operator=(other);
 	return (*this);
@@ -36,7 +36,7 @@ Ice&	Ice::operator=( Ice const &other )
 // Destructor
 Ice::~Ice()
 {
-	std::cout << "Ice destructor was called" << std::endl;
+	//std::cout << "Ice destructor was called" << std::endl;
 }
 
 // Member functions

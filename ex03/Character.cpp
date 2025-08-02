@@ -15,7 +15,7 @@
 // Default constructor
 Character::Character() : _name("Unknown")
 {
-    std::cout << "Character default constructor was called" << std::endl;
+    //std::cout << "Character default constructor was called" << std::endl;
     for (int i = 0; i < SLOTS; i++)
     {
         this->_inventory[i] = NULL;
@@ -23,19 +23,19 @@ Character::Character() : _name("Unknown")
 }
 
 // Parametric constructor
-Character::Character( std::string const &name ) : _name(name)
+Character::Character( std::string const &name ) : _name(name), _floorIndex(0)
 {
-    std::cout << "Character parametric constructor was called" << std::endl;
+    //std::cout << "Character parametric constructor was called" << std::endl;
     for (int i = 0; i < SLOTS; i++)
-    {
         this->_inventory[i] = NULL;
-    }
+    for (int i = 0; i < 1024; i++)
+        this->_floor[i] = NULL;
 }
 
 // Copy constructor
 Character::Character( Character const &other ) : _name(other._name)
 {
-    std::cout << "Character copy constructor was called" << std::endl;
+    //std::cout << "Character copy constructor was called" << std::endl;
     for (int i = 0; i < SLOTS; i++)
     {
         if (other._inventory[i])
@@ -66,12 +66,14 @@ Character&  Character::operator=( Character const &other )
 // Destructor
 Character::~Character()
 {
-    std::cout << "Character destructor was called" << std::endl;
+    //std::cout << "Character destructor was called" << std::endl;
     for (int i = 0; i < SLOTS; i++)
     {
         delete this->_inventory[i];
         this->_inventory[i] = NULL;
     }
+    for (int i = 0; i < this->_floorIndex; i++)
+        delete this->_floor[i];
 }
 
 // Getter
@@ -84,14 +86,17 @@ std::string const	&Character::getName() const
 void	Character::equip( AMateria *m )
 {
 	if (!m)
-		return ;
+    {
+		std::cout << "Unknown materia can't be equiped to " << this->_name << std::endl;
+        return ;
+    }
 	for (int i = 0; i < SLOTS; i++)
 	{
 		if (!this->_inventory[i])
 		{
 			this->_inventory[i] = m;
 			std::cout << this->_name << " equiped with " << m->getType() << " in slot " << i << std::endl; 
-			break ;
+			return ;
 		}
 	}
 	std::cout << this->_name << " has no available slots" << std::endl;
@@ -99,18 +104,25 @@ void	Character::equip( AMateria *m )
 
 void	Character::unequip( int idx )
 {
-	if (idx >= 0 && idx < SLOTS)
+	if (idx >= 0 && idx < SLOTS && this->_inventory[idx])
 	{
-		std::cout << this->_name << " unequiped " << _inventory[idx]->getType() << " from slot " << idx << std::endl;
+		if (_floorIndex < 1024)
+            _floor[_floorIndex++] = _inventory[idx];
+        std::cout << this->_name << " unequiped " << _inventory[idx]->getType() << " from slot " << idx << std::endl;
 		this->_inventory[idx] = NULL;
 	}
 }
 
 void	Character::use( int idx, ICharacter &target )
 {
-	if (idx >= 0 && idx < SLOTS && _inventory[idx])
-		this->_inventory[idx]->use(target);
+	if (idx >= 0 && idx < SLOTS)
+    {
+        if (this->_inventory[idx])
+            this->_inventory[idx]->use(target);
+        else
+            std::cout << "No Materia available in slot " << idx << std::endl;
+    }
 	else
-		std::cout << "No Materia available in slot " << idx << std::endl;
+		std::cout << "Slot " << idx << " is out of range." << std::endl;
 }
 

@@ -24,6 +24,8 @@ class   Character : public ICharacter
 
         std::string _name;
         AMateria*   _inventory[SLOTS];
+        AMateria*	_floor[1024];
+        int		_floorIndex;
 
     public:
 
@@ -31,7 +33,7 @@ class   Character : public ICharacter
 		Character( std::string const &name );
         Character( Character const &other );
         Character&  operator=( Character const &other );
-        ~Character();
+        virtual ~Character();
 
         std::string const	&getName() const;
 		

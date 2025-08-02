@@ -13,8 +13,6 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include <iostream>
-# include <string>
 # include "AMateria.hpp"
 
 class   Ice : public AMateria
@@ -24,7 +22,7 @@ class   Ice : public AMateria
         Ice();
         Ice( Ice const &other );
         Ice&    operator=( Ice const &other );
-        ~Ice();
+        virtual ~Ice();
 
         AMateria*   clone() const;
         void    use( ICharacter &target );

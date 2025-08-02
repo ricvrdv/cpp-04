@@ -15,19 +15,19 @@
 // Default constructor
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure default constructor was called" << std::endl;
+	//std::cout << "Cure default constructor was called" << std::endl;
 }
 
 // Copy constructor
 Cure::Cure( Cure const &other ) : AMateria(other)
 {
-	std::cout << "Cure copy constructor was called" << std::endl;
+	//std::cout << "Cure copy constructor was called" << std::endl;
 }
 
 // Copy assignment operator
 Cure&	Cure::operator=( Cure const &other )
 {
-	std::cout << "Cure copy assignment operator was called" << std::endl;
+	//std::cout << "Cure copy assignment operator was called" << std::endl;
 	if (this != &other)
 		AMateria::operator=(other);
 	return (*this);
@@ -36,7 +36,7 @@ Cure&	Cure::operator=( Cure const &other )
 // Destructor
 Cure::~Cure()
 {
-	std::cout << "Cure destructor was called" << std::endl;
+	//std::cout << "Cure destructor was called" << std::endl;
 }
 
 // Member functions
