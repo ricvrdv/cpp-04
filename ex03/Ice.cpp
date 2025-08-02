@@ -29,7 +29,7 @@ Ice&	Ice::operator=( Ice const &other )
 {
 	std::cout << "Ice copy assignment operator was called" << std::endl;
 	if (this != &other)
-		this->type = other.type;
+		AMateria::operator=(other);
 	return (*this);
 }
 
