@@ -33,8 +33,8 @@ AMateria::AMateria( AMateria const &other ) : _type(other._type)
 // Copy assignment constructor
 AMateria&   AMateria::operator=( AMateria const &other )
 {
-    if (this != &other) {}
     //std::cout << "Materia copy assignment operator was called" << std::endl;
+    (void)other;
     return (*this);
 }
 

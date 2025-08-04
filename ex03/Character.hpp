@@ -17,15 +17,16 @@
 # include "AMateria.hpp"
 
 # define SLOTS 4
+# define MAX_FLOOR 1024
 
 class   Character : public ICharacter
 {
     private:
 
-        std::string _name;
-        AMateria*   _inventory[SLOTS];
-        AMateria*	_floor[1024];
-        int		_floorIndex;
+        std::string	_name;
+        AMateria*	_inventory[SLOTS];
+        AMateria*	_floor[MAX_FLOOR];
+        int			_floorIndex;
 
     public:
 

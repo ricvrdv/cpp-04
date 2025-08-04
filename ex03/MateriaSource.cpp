@@ -36,6 +36,7 @@ MateriaSource::MateriaSource( MateriaSource const &other )
 // Copy assignment operator
 MateriaSource&	MateriaSource::operator=( MateriaSource const &other )
 {
+	//std::cout << "MateriaSource copy assignment operator was called" << std::endl;
 	if (this != &other)
 	{
 		for (int i = 0; i < MAX; i++)

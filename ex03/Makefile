@@ -26,7 +26,7 @@ RM = rm -rf
 # SOURCE FILES                                                                 #
 #==============================================================================#
 
-SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp Thunder.cpp Fire.cpp MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
