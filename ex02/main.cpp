@@ -20,6 +20,9 @@ int	main()
         std::cout << "[ Basic test ]" << std::endl;
         const AAnimal*   dog = new Dog();
         const AAnimal*   cat = new Cat();
+        
+        // Can't instantiate AAnimal
+        //AAnimal a;
 
         std::cout << std::endl;
         dog->makeSound();

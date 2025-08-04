@@ -44,8 +44,8 @@ int	main()
         w->makeSound();
         std::cout << std::endl;
 
-        delete wrong;
         delete w;
+        delete wrong;
     }
     return (0);
 }
