@@ -9,4 +9,4 @@
 - Deep copies
 
 -----
-⏪️ Go back to [C++ Module 02](https://github.com/ricvrdv/cpp-02) - function and operator overloading
+⏪️ Go back to [C++ Module 03](https://github.com/ricvrdv/cpp-03/tree/main) - inheritance between classes
